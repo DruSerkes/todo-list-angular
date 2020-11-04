@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-crash-todolist';
+  name: string = 'Dru';
+
+  // runs as soon as component loads
+  constructor() {
+    this.changeName('Bossman');
+  }
+
+  // can create custom methods
+  changeName(name: string): void {
+    this.name = name;
+  }
 }
