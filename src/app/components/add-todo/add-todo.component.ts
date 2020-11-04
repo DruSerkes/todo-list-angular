@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add-todo',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-todo.component.css']
 })
 export class AddTodoComponent implements OnInit {
+  @Output() addTodo: EventEmitter<any> = new EventEmitter();
+
   // Form inputs should be assigned as properties of component
   title: string;
 
@@ -14,4 +16,12 @@ export class AddTodoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    const todo = {
+      title: this.title,
+      completed: false
+    };
+
+    this.addTodo.emit(todo);
+  }
 }
