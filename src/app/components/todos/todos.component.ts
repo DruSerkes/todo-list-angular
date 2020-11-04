@@ -13,23 +13,6 @@ export class TodosComponent implements OnInit {
 
   // similar to onMount - you want to use this
   ngOnInit(): void {
-    this.todos = [
-      {
-        id: 1,
-        title: 'Todo One',
-        completed: true
-      },
-      {
-        id: 2,
-        title: 'Todo Two',
-        completed: true
-      },
-      {
-        id: 3,
-        title: 'Todo Three',
-        completed: false
-      }
-    ]
   }
 
 }
