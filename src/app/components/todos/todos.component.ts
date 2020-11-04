@@ -14,7 +14,9 @@ export class TodosComponent implements OnInit {
 
   // similar to onMount - you want to use this
   ngOnInit(): void {
-    this.todos = this.todoService.getTodos();
+    this.todoService.getTodos().subscribe(todos => {
+      this.todos = todos
+    });
   }
 
 }
