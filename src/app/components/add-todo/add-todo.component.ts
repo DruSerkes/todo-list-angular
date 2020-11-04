@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-todo.component.css']
 })
 export class AddTodoComponent implements OnInit {
+  // Form inputs should be assigned as properties of component
+  title: string;
 
   constructor() { }
 
