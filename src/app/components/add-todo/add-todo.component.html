@@ -7,7 +7,7 @@
 
 
 <!-- Reactive Form -->
-<form class="form" FormGroup="newTodoForm" (ngSubmit)='onSubmitReactive()'>
+<form class="form" [formGroup]="newTodoForm" (ngSubmit)='onSubmitReactive()'>
     <!-- Use brackets and parenthesis for 2-way data modeling -->
     <input type="text" formControlName="titleReactive" placeholder="Add Todo...">
     <input type="submit" value="Submit" class="btn">
