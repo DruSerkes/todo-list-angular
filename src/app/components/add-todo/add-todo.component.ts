@@ -32,9 +32,9 @@ export class AddTodoComponent implements OnInit {
   }
 
   onSubmitReactive() {
-    const { title } = this.newTodoForm.value;
+    const { titleReactive } = this.newTodoForm.value;
     const todo = {
-      title,
+      title: titleReactive,
       completed: false
     }
     this.addTodo.emit(todo);
