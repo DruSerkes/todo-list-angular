@@ -20,7 +20,8 @@ export class TodoService {
 
   // Get Todos
   getTodos(): Observable<Todo[]> {
-    return this.http.get<Todo[]>(`${this.todosUrl}?${this.todosLimit}`)
+    const url = `${this.todosUrl}?${this.todosLimit}`;
+    return this.http.get<Todo[]>(url, httpOptions);
   }
 
   // Toggle Completed
@@ -32,7 +33,7 @@ export class TodoService {
   // Delete Todo
   deleteTodo(todo: Todo): Observable<any> {
     const url = `${this.todosUrl}/${todo.id}`;
-    return this.http.delete<Todo>(url, httpOptions)
+    return this.http.delete<Todo>(url, httpOptions);
   }
 
   // Add Todo

@@ -27,10 +27,13 @@ export class TodosComponent implements OnInit {
   }
 
   addTodo(todo: Todo) {
-    this.todoService.addTodo(todo).subscribe(todo => {
-      this.todos.push(todo);
-      console.log(todo);
-      console.log('added');
+    // Usually a DB will automatically assign an ID
+    // This API is fake data so it won't.. 
+    this.todoService.addTodo(todo).subscribe(todoData => {
+      const id: number = Math.random();
+      todoData.id = id;
+      // ^ so we'll assign one here in a janky way for practice
+      this.todos.push(todoData);
     })
   }
 }

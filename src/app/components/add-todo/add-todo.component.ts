@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-add-todo',
@@ -16,7 +17,7 @@ export class AddTodoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit() {
+  onSubmitTemplate() {
     const todo = {
       title: this.title,
       completed: false
