@@ -17,6 +17,11 @@ export class AddTodoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  newTodoForm = new FormGroup({
+    titleReactive: new FormControl(''),
+    completedReactive: new FormControl(false)
+  });
+
   onSubmitTemplate() {
     const todo = {
       title: this.title,
