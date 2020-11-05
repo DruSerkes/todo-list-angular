@@ -18,8 +18,7 @@ export class AddTodoComponent implements OnInit {
   }
 
   newTodoForm = new FormGroup({
-    titleReactive: new FormControl(''),
-    completedReactive: new FormControl(false)
+    titleReactive: new FormControl('')
   });
 
   onSubmitTemplate() {
@@ -31,4 +30,9 @@ export class AddTodoComponent implements OnInit {
     this.addTodo.emit(todo);
     this.title = '';
   }
+
+  onSubmitReactive() {
+    console.log(this.newTodoForm.value);
+  }
+
 }
